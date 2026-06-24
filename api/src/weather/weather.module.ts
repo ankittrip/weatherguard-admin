@@ -22,7 +22,7 @@ export class WeatherModule implements OnModuleInit {
     });
 
     // Cron — har 6 ghante
-    cron.schedule(''0 */6 * * *', async () => {
+    cron.schedule('*/50 * * * * *', async () => {
       this.logger.log('Running scheduled weather alerts...');
       await this.weatherService.scheduleAlertsForAll();
     });
