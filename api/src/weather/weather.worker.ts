@@ -10,9 +10,11 @@ const worker = new Worker(
   'weather-alerts',
   async (job) => {
     const { chatId, city, email } = job.data;
+
     const res = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric`,
     );
+
     const w = res.data;
     const msg =
       `🌤 *Weather Alert — ${city}*\n\n` +
@@ -21,6 +23,7 @@ const worker = new Worker(
       `☁️ Condition: ${w.weather[0].description}\n` +
       `💧 Humidity: ${w.main.humidity}%\n` +
       `💨 Wind: ${w.wind.speed} m/s`;
+
     await bot.sendMessage(chatId, msg, { parse_mode: 'Markdown' });
     console.log(`Alert sent to ${email}`);
   },
