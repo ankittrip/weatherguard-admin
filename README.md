@@ -6,7 +6,7 @@ A secure, invite-only weather alert service that connects a web-based admin dash
 
 - **Live Demo:** https://weatherguard-admin.vercel.app
 - **API:** https://weatherguard-admin.onrender.com
-- **Demo Video:** [Loom Video Link Here]
+- **Demo Video:** https://www.loom.com/share/012d3f694bc74b0fb7c6a199f61b6f9e
 
 ---
 
